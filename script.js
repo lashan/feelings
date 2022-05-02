@@ -8,7 +8,7 @@ function buildPage() {
       name: "Happy",
       color: "#FFC700",
       feelings: [
-        { 
+        {
           name: "Playful",
           feelings: [
             { name: "Aroused" },
@@ -358,9 +358,9 @@ function buildPage() {
       }
 
       html += `
-          </div>  
+          </div>
         </div>
-    `;   
+    `;
     }
 
     html += `
@@ -371,6 +371,7 @@ function buildPage() {
 
   document.getElementById("feelings").innerHTML = html;
 }
+
 function feelingClicked() {
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -395,6 +396,7 @@ function feelingClicked() {
     }
   }, false);
 }
+
 function donePicking() {
   let data = {
     primary : [],
@@ -409,8 +411,8 @@ function donePicking() {
     const entires = formData.entries();
     const keys = formData.values();
 
-    for (input of entires) {   
-      data.feelings[input[0]] = formData.getAll(input[0]);      
+    for (input of entires) {
+      data.feelings[input[0]] = formData.getAll(input[0]);
     }
 
     let longest = 0;
@@ -427,20 +429,20 @@ function donePicking() {
     }
 
     // First sentence
-    let strPrimaries = data.primary.join(", ").replace(/,(?=[^,]*$)/, ' and');    
+    let strPrimaries = data.primary.join(", ").replace(/,(?=[^,]*$)/, ' and');
     phrase += `Right now I'm feeling pretty ${strPrimaries} — `;
 
-    // Second sentence   
+    // Second sentence
     let mainTertiaries = [];
     for (x of data.primary) { mainTertiaries = mainTertiaries.concat(data.feelings[x]); }
-    let strMainTertiaries = mainTertiaries.join(", ").replace(/,(?=[^,]*$)/, ' and'); 
+    let strMainTertiaries = mainTertiaries.join(", ").replace(/,(?=[^,]*$)/, ' and');
     phrase += `I'm feeling ${strMainTertiaries}. `;
 
     // Third sentence
     let allFeelings = [].concat.apply([], Object.values(data.feelings));
     const feelingsToRemove = new Set(mainTertiaries);
     const remainingTertiaries = allFeelings.filter((feeling) => { return !feelingsToRemove.has(feeling); });
-    let strRemainingTertiaries = remainingTertiaries.join(", ").replace(/,(?=[^,]*$)/, ' and');  
+    let strRemainingTertiaries = remainingTertiaries.join(", ").replace(/,(?=[^,]*$)/, ' and');
 
     if (remainingTertiaries.length != 0) {
       phrase += `I'm also feeling ${strRemainingTertiaries}.`;
@@ -449,4 +451,8 @@ function donePicking() {
     document.getElementById("results").classList.add("visible");
     document.getElementById("phrase").innerHTML = phrase;
   });
+}
+
+function goBack() {
+  document.getElementById("results").classList.remove("visible");
 }
