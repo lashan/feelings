@@ -450,6 +450,7 @@ function donePicking() {
 
     document.getElementById("results").classList.add("visible");
     document.getElementById("phrase").innerHTML = phrase;
+    phrase = "";
   });
 }
 
