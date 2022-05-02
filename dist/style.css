@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&display=swap");
+body {
+  background: #07011F;
+  color: #fff;
+  font-family: "League Spartan", sans-serif;
+  margin: 0;
+  margin-top: 72px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 390px;
+  margin: 0 auto;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(7, 1, 31, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+header .nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 24px;
+}
+header .nav #done {
+  border: none;
+  background: none;
+  color: #fff;
+  font-family: "League Spartan", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+header .nav #done.disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+main .primary-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+main .primary-wrap .primary {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+  text-transform: uppercase;
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0.08);
+}
+main .primary-wrap .primary span {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+main .secondary-wrap {
+  width: 100%;
+}
+main .secondary-wrap .secondary-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  width: 100%;
+}
+main .secondary-wrap .secondary-row:nth-child(2n) {
+  background: rgba(0, 0, 0, 0.03);
+}
+main .secondary-wrap .secondary-row .secondary {
+  width: 100%;
+  padding-left: 20px;
+  font-size: 120%;
+}
+main .secondary-wrap .secondary-row .tertiary-wrap {
+  width: 100%;
+  padding-right: 16px;
+}
+main .secondary-wrap .secondary-row .tertiary-wrap label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  width: 100%;
+}
+main .secondary-wrap .secondary-row .tertiary-wrap label input {
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+main .secondary-wrap .secondary-row .tertiary-wrap label input:checked ~ .checkmark {
+  border-color: transparent;
+}
+main .secondary-wrap .secondary-row .tertiary-wrap label input:checked ~ .checkmark:after {
+  display: block;
+}
+main .secondary-wrap .secondary-row .tertiary-wrap label .checkmark {
+  top: 0;
+  left: 0;
+  height: 12px;
+  width: 12px;
+  border: 2px solid #fff;
+  border-radius: 3px;
+}
+main .secondary-wrap .secondary-row .tertiary-wrap label .checkmark:after {
+  display: none;
+  left: 2px;
+  top: 0px;
+  width: 4px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  content: "";
+  position: relative;
+}
+
+#results {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #07011F;
+  z-index: 3;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.2em;
+  opacity: 0;
+  pointer-events: none;
+}
+#results .container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+#results.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+#results #phrase {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+#results button {
+  background-color: #fff;
+  border: none;
+  padding: 10px 12px 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1em;
+  border-radius: 100px;
+  font-family: "League Spartan", sans-serif;
+  cursor: pointer;
+}
