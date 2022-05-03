@@ -16,6 +16,7 @@ body {
   margin-top: 72px;
   max-width: 100%;
   overflow-x: hidden;
+  font-size: 14px;
 }
 
 a {
@@ -44,6 +45,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0px 24px;
+
+    h3 {
+      font-weight: normal;
+    }
 
     #done {
       border: none;
@@ -82,7 +87,7 @@ main {
 
       span {
         writing-mode: vertical-rl;
-        text-orientation: upright;
+        transform: rotate(180deg);
       }
     }
   }
