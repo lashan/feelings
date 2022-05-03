@@ -17,11 +17,37 @@ body {
   max-width: 100%;
   overflow-x: hidden;
   font-size: 14px;
+
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  cursor: default;
+}
+
+@mixin selectable {
+  -webkit-touch-callout: text;
+    -webkit-user-select: text;
+     -khtml-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+            user-select: text;
+  cursor: text;
 }
 
 a {
   color: white;
   text-decoration: none;
+}
+
+@mixin ease-transition {
+  transition: all 0.3s ease;
+}
+
+a, button, input, label, label * {
+  @include ease-transition;
 }
 
 .container {
@@ -124,6 +150,7 @@ main {
           align-items: center;
           padding: 16px 0;
           width: 100%;
+          cursor: pointer;
 
           input {
             cursor: pointer;
@@ -155,7 +182,7 @@ main {
             &:after {
               display: none;
               left: 2px;
-              top: 0px;
+              top: -2px;
               width: 4px;
               height: 10px;
               border: solid white;
@@ -186,6 +213,7 @@ main {
   line-height: 1.2em;
   opacity: 0;
   pointer-events: none;
+  @include ease-transition;
 
   .container {
     display: grid;
@@ -201,6 +229,7 @@ main {
   #phrase {
     padding-left: 16px;
     padding-right: 16px;
+    @include selectable;
   }
 
   button {
