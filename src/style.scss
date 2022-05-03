@@ -1,9 +1,17 @@
+@font-face {
+  font-family: 'Alliance Neue';
+  src: url('/Alliance-NeueMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&display=swap');
 
 body {
   background: #07011F;
   color: #fff;
-  font-family: 'League Spartan', sans-serif;
+  font-family: 'Alliance Neue', sans-serif;
   margin: 0;
   margin-top: 72px;
   max-width: 100%;
@@ -41,7 +49,7 @@ header {
       border: none;
       background: none;
       color: #fff;
-      font-family: 'League Spartan', sans-serif;
+      font-family: 'Alliance Neue', sans-serif;
       font-size: 16px;
       cursor: pointer;
 
@@ -201,7 +209,7 @@ main {
     font-size: 16px;
     line-height: 1em;
     border-radius: 100px;
-    font-family: 'League Spartan', sans-serif;
+    font-family: 'Alliance Neue', sans-serif;
     cursor: pointer;
   }
 }
