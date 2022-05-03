@@ -140,6 +140,7 @@ main .secondary-wrap {
     padding-left: 16px;
     padding-right: 16px; }
   #results button {
+    color: #000;
     background-color: #fff;
     border: none;
     padding: 10px 12px 6px;
