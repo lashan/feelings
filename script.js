@@ -436,7 +436,7 @@ function donePicking() {
     let mainTertiaries = [];
     for (x of data.primary) { mainTertiaries = mainTertiaries.concat(data.feelings[x]); }
     let strMainTertiaries = mainTertiaries.join(", ").replace(/,(?=[^,]*$)/, ' and');
-    phrase += `I'm feeling ${strMainTertiaries}. `;
+    phrase += `I feel ${strMainTertiaries}. `;
 
     // Third sentence
     let allFeelings = [].concat.apply([], Object.values(data.feelings));
@@ -445,7 +445,7 @@ function donePicking() {
     let strRemainingTertiaries = remainingTertiaries.join(", ").replace(/,(?=[^,]*$)/, ' and');
 
     if (remainingTertiaries.length != 0) {
-      phrase += `I'm also feeling ${strRemainingTertiaries}.`;
+      phrase += `I also feel ${strRemainingTertiaries}.`;
     }
 
     document.getElementById("results").classList.add("visible");
