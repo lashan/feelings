@@ -7,7 +7,8 @@
     "build": "gulp -f ./build/gulpfile.js --cwd ./ --continue",
     "serve": "gulp serve -f ./build/gulpfile.js --cwd ./ --continue",
     "task": "gulp -f ./build/gulpfile.js --cwd ./ --continue",
-    "tasks": "gulp --tasks-simple -f ./build/gulpfile.js --cwd ./ --continue"
+    "tasks": "gulp --tasks-simple -f ./build/gulpfile.js --cwd ./ --continue",
+    "deploy": "curl -X POST https://api.vercel.com/v1/integrations/deploy/prj_4PFnYgQDlyami8Q87yrvbW8RaDkf/E1YGfWsY1W"
   },
   "config": {
     "srcDir": "src/",
