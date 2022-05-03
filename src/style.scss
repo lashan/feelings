@@ -17,6 +17,7 @@ body {
   max-width: 100%;
   overflow-x: hidden;
   font-size: 14px;
+  touch-action: pan-y;
 
   -webkit-touch-callout: none;
     -webkit-user-select: none;
