@@ -382,12 +382,8 @@ function feelingClicked() {
       checkbox.addEventListener('change', function(event) {
 
         if (event.target.checked) {
-          // alert(`${event.target.value} is checked`);
           document.getElementById("done").classList.remove("disabled");
-        }
-        else {
-          // alert(`${event.target.value} is unchecked`);
-
+        } else {
           if (document.querySelectorAll('input[type="checkbox"]:checked').length == 0) {
             document.getElementById("done").classList.add("disabled");
           }
