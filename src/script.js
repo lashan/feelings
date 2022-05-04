@@ -90,7 +90,7 @@ function buildPage() {
           ]
         },
         {
-          name: "Interested",
+          name: "Despair",
           feelings: [
             { name: "Grief" },
             { name: "Powerless" }
